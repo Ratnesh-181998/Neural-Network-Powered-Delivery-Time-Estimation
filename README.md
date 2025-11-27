@@ -14,6 +14,8 @@
 
 [🚀 Quick Start](#-quick-start) • [📊 Live Demo](#-usage) • [📖 Documentation](#-table-of-contents) • [🤝 Contribute](#-contributing)
 
+<img width="2433" height="1148" alt="image" src="https://github.com/user-attachments/assets/72d64e91-7dbb-4392-86a0-56a966d4c10f" />
+
 ---
 
 ### 🏆 **Project Highlights**
@@ -416,8 +418,8 @@ I'm always open to discussing:
 
 | Platform | Link |
 |----------|------|
-| 📧 **Email** | [ratneshkumar181998@gmail.com](mailto:ratneshkumar181998@gmail.com) |
-| 💼 **LinkedIn** | [linkedin.com/in/ratnesh-kumar-3a4671191](https://www.linkedin.com/in/ratnesh-kumar-3a4671191/) |
+| 📧 **Email** | [rattudacsit2021gate@gmail.com](mailto:rattudacsit2021gate@gmail.com) |
+| 💼 **LinkedIn** | [https://www.linkedin.com/in/ratneshkumar1998/](https://www.linkedin.com/in/ratneshkumar1998/) |
 | 🐙 **GitHub** | [@Ratnesh-181998](https://github.com/Ratnesh-181998) |
 | 🌐 **Portfolio** | [GitHub Profile](https://github.com/Ratnesh-181998) |
 
