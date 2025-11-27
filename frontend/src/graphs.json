@@ -1,0 +1,296 @@
+[
+  {
+    "id": 0,
+    "src": "graphs/page_0.png",
+    "context": "porter-neural-networks-regression April 18, 2024 Porter: Neural Networks Regression By Ratnesh Kumar Context: Porter is India\u2019s Largest Marketplace for Intra-City Logistics. Leader in the country\u2019s $4...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 1
+  },
+  {
+    "id": 1,
+    "src": "graphs/page_1.png",
+    "context": "[12]: import pandas as pd df=pd.read_csv('/content/sample_data/Porterdataset.csv') df.head() [12]: market_id created_at actual_delivery_time \\ 0 1.0 2015-02-06 22:24:17 2015-02-06 23:27:16 1 2.0 2015-...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 2
+  },
+  {
+    "id": 2,
+    "src": "graphs/page_2.png",
+    "context": "0 market_id 196441 non-null float64 1 created_at 197428 non-null object 2 actual_delivery_time 197421 non-null object 3 store_id 197428 non-null object 4 store_primary_category 192668 non-null object ...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 3
+  },
+  {
+    "id": 3,
+    "src": "graphs/page_3.png",
+    "context": "df.head() NAN in total_onshift_partners : 91.7630731203274 NAN in total_busy_partners : 91.7630731203274 NAN in total_outstanding_orders : 91.7630731203274 [15]: market_id created_at actual_delivery_t...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 4
+  },
+  {
+    "id": 4,
+    "src": "graphs/page_4.png",
+    "context": "<class 'pandas.core.frame.DataFrame'> Int64Index: 197421 entries, 0 to 197427 Data columns (total 11 columns): # Column Non-Null Count Dtype --- ------ -------------- ----- 0 market_id 197421 non-null...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 5
+  },
+  {
+    "id": 5,
+    "src": "graphs/page_5.png",
+    "context": "[19]: df.drop(['created_at','actual_delivery_time','store_id'],axis=1,inplace=True) [20]: df['store_primary_category']=df['store_primary_category'].astype('category'). \u21aacat.codes df.head() [20]: marke...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 6
+  },
+  {
+    "id": 6,
+    "src": "graphs/page_6.png",
+    "context": "[22]: import seaborn as sns import matplotlib.pyplot as plt plt.figure(figsize=(10,2)) plt.subplot(1,2,1) sns.barplot(y='total_items',x='market_id',data=df,estimator='sum') plt.subplot(1,2,2) sns.barp...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 7
+  },
+  {
+    "id": 7,
+    "src": "graphs/page_7.png",
+    "context": "[23]: plt.figure(figsize=(5,2)) sns.barplot(y='total_items',x='order_protocol',data=df,estimator='sum') [23]: <Axes: xlabel='order_protocol', ylabel='total_items'> [24]: plt.figure(figsize=(10,2)) plt...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 8
+  },
+  {
+    "id": 8,
+    "src": "graphs/page_8.png",
+    "context": "[25]: No Collinearity Detecting Outliers [27]: import seaborn as sns import matplotlib.pyplot as plt plt.figure(figsize=(2,2)) sns.boxplot(y='Time_taken_for_delivery',data=df) plt.xticks(rotation=90);...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 9
+  },
+  {
+    "id": 9,
+    "src": "graphs/page_9.png",
+    "context": "Removing Outliers [28]: import numpy as np print((df.loc[df['Time_taken_for_delivery'] >400].shape[0] / df.shape[0]) * 100) df.drop(index=df.loc[df['Time_taken_for_delivery'] >400].index[0],inplace=Tr...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 10
+  },
+  {
+    "id": 10,
+    "src": "graphs/page_10.png",
+    "context": "mse=mean_squared_error(y_test,prediction) rmse=mse**.5 print(\"mse : \",mse) print(\"rmse : \",rmse) mae=mean_absolute_error(y_test,prediction) print(\"mase : \",mae) mape=np.mean(np.abs((y_test - predictio...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 11
+  },
+  {
+    "id": 11,
+    "src": "graphs/page_11.png",
+    "context": "model=Sequential() model.add(Dense(11,kernel_initializer='normal',activation='relu')) model.add(Dense(32,activation='relu')) model.add(Dense(32,activation='relu')) model.add(Dense(1,activation='linear...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 12
+  },
+  {
+    "id": 12,
+    "src": "graphs/page_12.png",
+    "context": "247/247 [==============================] - 1s 3ms/step - loss: 366.2173 - mse: 366.2173 - mae: 13.1884 - val_loss: 1283.1187 - val_mse: 1283.1187 - val_mae: 13.1472 [75]: model.summary() from tensorfl...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 13
+  },
+  {
+    "id": 13,
+    "src": "graphs/page_13.png",
+    "context": "[78]: plt.plot(history.history['loss'])\nplt.plot(history.history['val_loss'])\nplt.xlabel(\"Epochs\")\nplt.ylabel('loss')\nplt.legend(['loss','val_loss'])\nplt.show()\n14",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 14
+  },
+  {
+    "id": 14,
+    "src": "graphs/page_14.png",
+    "context": "[84]: print('r2_score:',r2_score(y_test, model.predict(X_test))) mse = mean_squared_error(y_test, model.predict(X_test)) rmse = mse**.5 print(\"mse : \",mse) print(\"rmse : \",rmse) print(\"errors for neur...",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 15
+  },
+  {
+    "id": 15,
+    "src": "graphs/page_15.png",
+    "context": "[85]: 0.29956791711312275\n[ ]:\n16",
+    "source_pdf": "porter-neural-networks-regression.pdf",
+    "page": 16
+  },
+  {
+    "id": 16,
+    "src": "graphs/page_16.png",
+    "context": "1. Define the problem statement Problem Statement: Porter, India's Largest Marketplace for Intra-City Logistics, aims to improve the efficiency of its delivery operations by accurately estimating the ...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 1
+  },
+  {
+    "id": 17,
+    "src": "graphs/page_17.png",
+    "context": "# view all the variable names porter_data.columns Index(['market_id', 'created_at', 'actual_delivery_time', 'store_id',        'store_primary_category', 'order_protocol', 'total_items', 'subtotal',   ...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 2
+  },
+  {
+    "id": 18,
+    "src": "graphs/page_18.png",
+    "context": "# Check the shape of the dataset print(\"Shape of the dataset:-\") print(\"No. of rows: \", porter_data.shape[0]) print(\"No. of columns: \", porter_data.shape[1]) Shape of the dataset:- No. of rows:  19742...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 3
+  },
+  {
+    "id": 19,
+    "src": "graphs/page_19.png",
+    "context": "market_id created_at actual_delivery_time store_id count 196441.000000 197428 197421 197428 unique NaN 180985 178110 6743 top NaN 2015-02- 11 19:50:43 2015-02-11 20:40:45 d43ab110ab2489d6b9b2caa394bf9...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 4
+  },
+  {
+    "id": 20,
+    "src": "graphs/page_20.png",
+    "context": "market_id created_at actual_delivery_time store_id total_it 0 1.0 2015-02- 06 22:24:17 2015-02-06 23:27:16 df263d996281d984952c07998dc54358 1 2.0 2015-02- 10 21:49:25 2015-02-10 22:56:29 f0ade77b43923...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 5
+  },
+  {
+    "id": 21,
+    "src": "graphs/page_21.png",
+    "context": "# Check for outliers in the target variable Q1 = porter_data['delivery_time_mins'].quantile(0.25) Q3 = porter_data['delivery_time_mins'].quantile(0.75) IQR = Q3 - Q1 lower_bound = Q1 - (1.5 * IQR) upp...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 6
+  },
+  {
+    "id": 22,
+    "src": "graphs/page_22.png",
+    "context": "IQR) . We identify the outliers as the rows where 'delivery_time_mins' is either less than the lower bound or greater than the upper bound. We print the number of identified outliers. 3. We remove the...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 7
+  },
+  {
+    "id": 23,
+    "src": "graphs/page_23.png",
+    "context": "# Remove outliers from 'num_distinct_items' Q1 = porter_data['num_distinct_items'].quantile(0.25) Q3 = porter_data['num_distinct_items'].quantile(0.75) IQR = Q3 - Q1 lower_bound = Q1 - (1.5 * IQR) upp...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 8
+  },
+  {
+    "id": 24,
+    "src": "graphs/page_24.png",
+    "context": "# Separate numeric and categorical/datetime columns numeric_cols = porter_data.select_dtypes(include=['float64', 'int64']).columns categorical_cols = porter_data.select_dtypes(exclude=['float64', 'int...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 9
+  },
+  {
+    "id": 25,
+    "src": "graphs/page_25.png",
+    "context": "6. After scaling the numeric columns, we concatenate them with the categorical/datetime columns using np.concatenate  for both train and test sets. 7. Finally, we print the shapes of the scaled train ...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 10
+  },
+  {
+    "id": 26,
+    "src": "graphs/page_26.png",
+    "context": "Epoch 1/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 14s 3ms/step - loss: 292.5367 - val_loss: 0.0880 Epoch 2/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11s 3ms/step - loss: 0.0666 - val_loss: 0.0121 Epoch 3/100 3620/3...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 11
+  },
+  {
+    "id": 27,
+    "src": "graphs/page_27.png",
+    "context": "3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 10s 3ms/step - loss: 0.0014 - val_loss: 1.1463e-04 Epoch 32/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 10s 3ms/step - loss: 0.0026 - val_loss: 0.0014 Epoch 33/100 3620/3620 \u2501\u2501\u2501\u2501...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 12
+  },
+  {
+    "id": 28,
+    "src": "graphs/page_28.png",
+    "context": "3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 8s 2ms/step - loss: 6.0113e-04 - val_loss: 3.2459e-0 5 Epoch 62/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 9s 2ms/step - loss: 0.0017 - val_loss: 3.5549e-05 Epoch 63/100 3620/36...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 13
+  },
+  {
+    "id": 29,
+    "src": "graphs/page_29.png",
+    "context": "3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 8s 2ms/step - loss: 0.0013 - val_loss: 6.1904e-05 Epoch 89/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 8s 2ms/step - loss: 0.0042 - val_loss: 2.5029e-04 Epoch 90/100 3620/3620 \u2501\u2501...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 14
+  },
+  {
+    "id": 30,
+    "src": "graphs/page_30.png",
+    "context": "# Try different configurations x = layers.Dense(64, activation='relu')(inputs) x = layers.Dense(32, activation='relu')(x) outputs = layers.Dense(1)(x)  # Output layer with single node for regression #...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 15
+  },
+  {
+    "id": 31,
+    "src": "graphs/page_31.png",
+    "context": "Epoch 1/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 13s 3ms/step - loss: 294.2288 - val_loss: 0.0990 Epoch 2/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11s 3ms/step - loss: 0.0584 - val_loss: 0.0189 Epoch 3/100 3620/3...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 16
+  },
+  {
+    "id": 32,
+    "src": "graphs/page_32.png",
+    "context": "Epoch 31/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 10s 3ms/step - loss: 0.0032 - val_loss: 3.6652e-05 Epoch 32/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 11s 3ms/step - loss: 0.0030 - val_loss: 7.7749e-05 Epoch 33/1...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 17
+  },
+  {
+    "id": 33,
+    "src": "graphs/page_33.png",
+    "context": "3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 9s 2ms/step - loss: 0.0029 - val_loss: 5.2641e-05 Epoch 61/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 9s 2ms/step - loss: 0.0020 - val_loss: 7.0956e-04 Epoch 62/100 3620/3620 \u2501\u2501...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 18
+  },
+  {
+    "id": 34,
+    "src": "graphs/page_34.png",
+    "context": "3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 8s 2ms/step - loss: 0.0014 - val_loss: 5.6641e-05 Epoch 90/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 8s 2ms/step - loss: 0.0014 - val_loss: 0.0018 Epoch 91/100 3620/3620 \u2501\u2501\u2501\u2501\u2501\u2501...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 19
+  },
+  {
+    "id": 35,
+    "src": "graphs/page_35.png",
+    "context": "In this code: This code is the same as the one I provided earlier, where we plot the training and validation loss curves using the history  object returned by model.fit() . By analyzing these loss cur...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 20
+  },
+  {
+    "id": 36,
+    "src": "graphs/page_36.png",
+    "context": "1132/1132 \u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501\u2501 3s 3ms/step Mean Squared Error (MSE): 0.00472196252104635 Root Mean Squared Error (RMSE): 0.06871653746403664 Mean Absolute Error (MAE): 0.04970884936087948 R-squared (R...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 21
+  },
+  {
+    "id": 37,
+    "src": "graphs/page_37.png",
+    "context": "2. Explore ensemble methods: Investigate the use of ensemble methods, such as bagging or boosting, to combine multiple models and potentially improve the overall prediction accuracy. 3. Leverage advan...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 22
+  },
+  {
+    "id": 38,
+    "src": "graphs/page_38.png",
+    "context": "Logistics and supply chain: Estimating delivery times for goods and shipments based on transportation modes, route optimization, and inventory levels. Food delivery: Similar to the current case study,...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 23
+  },
+  {
+    "id": 39,
+    "src": "graphs/page_39.png",
+    "context": "1. Interquartile Range (IQR) method: Outliers are identified as values that fall outside the range of Q1 - 1.5 \u00d7 IQR and Q3 + 1.5 \u00d7 IQR, where Q1 and Q3 are the first and third quartiles, respectively...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 24
+  },
+  {
+    "id": 40,
+    "src": "graphs/page_40.png",
+    "context": "preprocess the data before feeding it into a neural network. 8. Briefly explain your choice of optimizer. Ans: In the provided code, I used the Adam optimizer, which is a popular choice for training n...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 25
+  },
+  {
+    "id": 41,
+    "src": "graphs/page_41.png",
+    "context": "10. Why does a neural network perform well on large datasets? Ans: Neural networks tend to perform well on large datasets for several reasons: 1. Representation Learning: Neural networks are capable o...",
+    "source_pdf": "Ratnesh_Porter_Case_Study.pdf",
+    "page": 26
+  }
+]

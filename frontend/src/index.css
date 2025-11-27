@@ -1,0 +1,41 @@
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1e40af;
+  --secondary: #10b981;
+  --bg-dark: #0f172a;
+  --card-bg: #1e293b;
+  --text-light: #f8fafc;
+  --text-gray: #94a3b8;
+  --input-bg: #334155;
+  --border: #475569;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+input, select {
+  outline: none;
+}

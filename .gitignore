@@ -1,0 +1,93 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node.js
+node_modules/
+package-lock.json
+yarn.lock
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+.nyc_output
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# OS
+Thumbs.db
+.DS_Store
+*.swp
+
+# Large data files (optional - uncomment if you don't want to track large CSVs)
+# *.csv
+# data_2.csv
+
+# Model files (optional - uncomment if models are too large for GitHub)
+# *.keras
+# *.h5
+# *.joblib
+# *.pkl
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
