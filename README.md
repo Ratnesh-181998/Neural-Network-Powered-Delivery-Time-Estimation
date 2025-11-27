@@ -397,7 +397,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 <div align="center">
 
 ### **Ratnesh Kumar**
-*Full-Stack Machine Learning Engineer | AI Enthusiast | Data Science Professional*
+*Full-Stack Data Scientist| AI/ML Engineer |GeN AI | Agentic AI| AI Enthusiast | Data Science Professional*
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ratnesh-kumar-3a4671191/)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Ratnesh-181998)
